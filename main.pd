@@ -1,4 +1,4 @@
-#N canvas 348 72 1331 949 10;
+#N canvas 647 145 1331 949 10;
 #X declare -path patch_editor_abs;
 #X declare -lib mrpeach;
 #X obj 7 692 declare -path patch_editor_abs;
