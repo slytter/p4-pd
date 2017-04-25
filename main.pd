@@ -1,4 +1,4 @@
-#N canvas 497 257 1280 752 10;
+#N canvas 108 184 1331 949 10;
 #X declare -path patch_editor_abs;
 #X declare -lib mrpeach;
 #X obj 7 692 declare -path patch_editor_abs;
@@ -1112,7 +1112,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1220,7 +1220,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3061,7 +3061,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -4665,7 +4665,7 @@ for more details.;
 -262144 -1 -1;
 #X obj 11 88 bng 15 250 50 0 SAVE-S SAVE-R <--SAVE!(enter) 17 7 0 10
 -262144 -4034 -1;
-#X text 338 8 UPD RECEIEVE;
+#X text 398 2 UPD RECEIEVE;
 #N canvas 1298 477 490 397 volume 0;
 #X floatatom 206 58 5 0 0 0 - - -;
 #X floatatom 100 59 5 0 0 0 - - -;
@@ -4704,7 +4704,7 @@ for more details.;
 #X connect 14 0 1 0;
 #X connect 15 0 0 0;
 #X restore 371 107 pd volume;
-#X obj 415 393 maestro4 2;
+#X obj 420 658 maestro4 2;
 #N canvas 995 426 450 300 loadAudio 0;
 #X obj 297 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -4726,18 +4726,16 @@ for more details.;
 #X restore 663 137 pd loadAudio;
 #X obj 732 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 664 112 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 663 114 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X text 720 96 start;
 #X text 658 97 stop;
-#X obj 388 310 *~ 0.1;
-#X obj 399 139 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4400 1;
+#X obj 473 458 *~ 0.1;
+#X obj 383 150 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 11400 1;
 #X obj 442 109 -;
-#X text 347 14 comment;
-#X floatatom 775 90 5 0 0 0 - - -;
-#X obj 678 224 millerverb 1;
-#X obj 947 211 stereo-delay 1;
+#X floatatom 775 69 5 0 0 0 - - -;
+#X obj 861 249 stereo-delay 1;
 #N canvas 964 78 1038 706 Receivedata 0;
 #X obj 227 7 import mrpeach;
 #X obj 247 72 unpackOSC;
@@ -4799,9 +4797,7 @@ for more details.;
 #X connect 25 0 28 0;
 #X connect 26 0 27 0;
 #X connect 29 0 30 0;
-#X restore 334 29 pd Receivedata;
-#X floatatom 499 56 5 0 0 0 - - -;
-#X text 582 72 comment;
+#X restore 393 19 pd Receivedata;
 #N canvas 1048 65 589 522 ifCondition 0;
 #X floatatom 26 248 5 0 0 0 - - -;
 #X msg 115 172 1;
@@ -4845,25 +4841,31 @@ for more details.;
 #X connect 18 0 19 1;
 #X connect 19 0 20 0;
 #X restore 469 93 pd ifCondition;
+#X obj 648 252 millerverb 1;
+#X text 347 14;
+#X msg 714 231 0;
+#X msg 741 231 1;
+#X floatatom 499 64 5 0 0 0 - - -;
+#X text 582 72;
 #X connect 10 0 18 0;
-#X connect 12 0 22 0;
-#X connect 12 0 23 0;
-#X connect 12 1 22 0;
-#X connect 12 1 23 0;
+#X connect 12 0 17 0;
+#X connect 12 0 24 0;
+#X connect 12 1 17 0;
+#X connect 12 1 24 0;
 #X connect 13 0 12 1;
 #X connect 14 0 12 0;
 #X connect 17 0 11 0;
 #X connect 17 0 11 2;
 #X connect 18 0 17 1;
-#X connect 19 0 21 0;
-#X connect 21 0 22 1;
-#X connect 21 0 23 3;
-#X connect 22 0 11 4;
-#X connect 22 1 11 6;
-#X connect 24 0 19 1;
-#X connect 24 1 10 0;
-#X connect 24 2 19 0;
-#X connect 24 3 10 1;
-#X connect 24 7 25 0;
-#X connect 24 9 27 0;
-#X connect 25 0 27 1;
+#X connect 19 0 20 0;
+#X connect 22 0 19 1;
+#X connect 22 1 10 0;
+#X connect 22 2 19 0;
+#X connect 22 3 10 1;
+#X connect 22 7 28 0;
+#X connect 22 9 23 0;
+#X connect 24 0 17 0;
+#X connect 24 1 17 0;
+#X connect 26 0 24 1;
+#X connect 27 0 24 1;
+#X connect 28 0 23 1;
