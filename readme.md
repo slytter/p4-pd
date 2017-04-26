@@ -5,3 +5,5 @@
 - Install [PD-Extended](https://puredata.info/downloads/pd-extended)
 - Install [xQuartz](https://www.xquartz.org)
 
+## Other info
+[Check puredata manual](https://puredata.info/docs/tutorials/pd-refcard)
