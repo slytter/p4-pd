@@ -1,4 +1,4 @@
-#N canvas 340 76 1331 949 10;
+#N canvas 378 285 1331 949 10;
 #X declare -path patch_editor_abs;
 #X declare -lib mrpeach;
 #X obj 7 692 declare -path patch_editor_abs;
@@ -1004,7 +1004,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1058,7 +1058,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1112,7 +1112,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256;
+-262144 -1 -1 1 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -1926,7 +1926,7 @@
 #X msg 177 81 0;
 #X msg 83 341 \; pd-main.pd obj 200 200 \$1 \$2;
 #X obj 162 280 nbx 5 14 -1e+37 1e+37 0 1 empty empty empty 0 -8 0 10
--262144 -1 -1 1 256;
+-262144 -1 -1 0 256;
 #X obj 64 387 t b b;
 #X msg 64 509 loadbang;
 #X obj 91 411 s SAVE-S;
@@ -3440,7 +3440,7 @@ start from zero for a clearer view of the patch.;
 #X msg 38 178 1;
 #X obj 38 156 r open-signal-flow!;
 #X msg 38 203 \; pd-signal-flow vis \$1;
-#N canvas 11 22 852 668 signal-flow 0;
+#N canvas 658 23 852 668 signal-flow 0;
 #X obj 22 10 cnv 15 365 30 empty empty SIGNAL-FLOW 20 12 0 14 -226533
 -262144 0;
 #X obj 26 161 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -158136
@@ -3513,7 +3513,7 @@ signal or short impulse(square-wave) to function properly.;
 #X obj 36 266 r open-color-code!;
 #X msg 36 313 \; pd-color-code vis \$1;
 #X msg 37 404 1;
-#N canvas 7 24 360 358 manual 0;
+#N canvas 9 23 360 358 manual 0;
 #X obj 28 82 bng 30 250 50 0 open-signal-flow! empty empty 10 7 0 10
 -158136 -1 -262144;
 #X obj 49 82 bng 30 250 50 0 open-signal-flow! empty empty 17 7 0 10
@@ -3653,7 +3653,7 @@ more elaborate pd-code for deeper control.;
 #X obj 204 151 r open-organelle-map!;
 #X msg 204 198 \; pd-organelle-map vis \$1;
 #X obj 203 272 r open-modules!;
-#N canvas 1230 50 618 657 modules 0;
+#N canvas 1230 49 618 657 modules 0;
 #X obj 203 81 cnv 15 180 15 empty empty MODULATION: 10 8 0 12 -158136
 -262144 0;
 #X obj 203 102 bng 15 250 50 0 \$0-create-basic-lfo! empty <--BASIC-LFO
@@ -4704,37 +4704,36 @@ for more details.;
 #X connect 14 0 1 0;
 #X connect 15 0 0 0;
 #X restore 355 168 pd volume;
-#X obj 420 658 maestro4 2;
-#N canvas 995 426 450 300 loadAudio 0;
+#X obj 558 618 maestro4 2;
+#N canvas 603 191 450 300 loadAudio 0;
 #X obj 297 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
 #X obj 133 138 readsf~ 2;
-#X msg 91 106 0;
 #X obj 121 183 outlet~;
 #X obj 175 183 outlet~;
 #X obj 53 13 inlet;
 #X obj 34 73 inlet;
-#X msg 131 42 open kaff.wav \, 1;
+#X msg 91 106 stop;
+#X msg 133 42 open Klap_PIK.wav \, 1;
 #X connect 0 0 7 0;
-#X connect 1 0 3 0;
-#X connect 1 1 4 0;
+#X connect 1 0 2 0;
+#X connect 1 1 3 0;
 #X connect 1 2 0 0;
-#X connect 2 0 1 0;
-#X connect 5 0 7 0;
-#X connect 6 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 6 0;
+#X connect 6 0 1 0;
 #X connect 7 0 1 0;
-#X restore 590 156 pd loadAudio;
-#X obj 659 132 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X restore 608 130 pd loadAudio;
+#X obj 677 106 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 590 133 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 608 107 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X text 647 115 start;
-#X text 585 116 stop;
+#X text 665 89 start;
+#X text 603 90 stop;
 #X obj 385 243 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 8000 1;
+-1 -1 0 1;
 #X obj 428 120 -;
-#X floatatom 492 168 5 0 0 0 - - -;
-#X obj 635 401 stereo-delay 1;
+#X floatatom 497 144 5 0 0 0 - - -;
 #N canvas 158 280 1038 706 Receivedata 0;
 #X obj 227 7 import mrpeach;
 #X obj 247 72 unpackOSC;
@@ -4791,13 +4790,10 @@ for more details.;
 #X connect 17 0 19 1;
 #X connect 18 0 19 1;
 #X connect 19 0 20 0;
-#X restore 957 111 pd ifCondition;
+#X restore 890 64 pd ifCondition;
 #X obj 636 201 millerverb 1;
-#X floatatom 929 83 5 0 0 0 - - -;
-#X text 1012 91;
-#X msg 937 345 1;
-#X msg 889 333 0;
-#X obj 636 543 *~ 0.1;
+#X floatatom 862 36 5 0 0 0 - - -;
+#X text 945 44 comment;
 #N canvas 985 209 450 300 receiveLeftArm 0;
 #X obj 23 173 routeOSC /skeletons/bones/leftArm;
 #X obj 24 201 unpack f f f f f f f f;
@@ -4866,33 +4862,32 @@ for more details.;
 #X connect 6 0 7 0;
 #X connect 8 0 0 0;
 #X restore 623 59 pd receiveSkelCentral;
-#X text 360 28;
+#X text 360 28 comment;
+#X obj 518 533 *~;
+#X obj 611 364 stereo-delay 1;
+#X obj 449 421 sig~;
+#X obj 564 169 sig~;
 #X connect 10 0 17 0;
-#X connect 12 0 23 0;
-#X connect 12 1 23 0;
+#X connect 12 0 22 0;
+#X connect 12 0 31 0;
+#X connect 12 1 22 0;
+#X connect 12 1 31 0;
 #X connect 13 0 12 1;
 #X connect 14 0 12 0;
-#X connect 17 0 28 1;
+#X connect 17 0 32 0;
 #X connect 18 0 19 0;
-#X connect 19 0 23 1;
-#X connect 19 0 20 2;
-#X connect 19 0 20 3;
-#X connect 20 0 28 0;
-#X connect 20 1 28 0;
-#X connect 21 0 29 0;
-#X connect 21 1 30 0;
-#X connect 21 2 31 0;
-#X connect 21 3 32 0;
-#X connect 23 0 20 0;
-#X connect 23 1 20 0;
-#X connect 24 0 22 1;
-#X connect 26 0 20 2;
-#X connect 26 0 20 3;
-#X connect 27 0 20 2;
-#X connect 27 0 20 3;
-#X connect 28 0 11 0;
-#X connect 28 0 11 2;
-#X connect 29 0 18 1;
-#X connect 29 1 10 0;
-#X connect 30 0 18 0;
-#X connect 30 1 10 1;
+#X connect 19 0 33 0;
+#X connect 20 0 25 0;
+#X connect 20 1 26 0;
+#X connect 20 2 27 0;
+#X connect 20 3 28 0;
+#X connect 23 0 21 1;
+#X connect 25 0 18 1;
+#X connect 25 1 10 0;
+#X connect 26 0 18 0;
+#X connect 26 1 10 1;
+#X connect 30 0 11 0;
+#X connect 31 0 11 4;
+#X connect 31 1 11 6;
+#X connect 32 0 30 1;
+#X connect 33 0 22 1;
