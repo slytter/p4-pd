@@ -1,4 +1,4 @@
-#N canvas 288 22 1331 774 10;
+#N canvas 418 22 1331 774 10;
 #X declare -path patch_editor_abs;
 #X declare -lib mrpeach;
 #X obj 7 692 declare -path patch_editor_abs;
@@ -4686,7 +4686,7 @@ for more details.;
 #X connect 1 0 5 0;
 #X connect 1 0 6 0;
 #X connect 2 0 1 0;
-#X restore 495 -22 pd Receivedata;
+#X restore 320 34 pd Receivedata;
 #N canvas 834 166 589 522 ifCondition 0;
 #X floatatom 26 248 5 0 0 0 - - -;
 #X msg 115 172 1;
@@ -4728,7 +4728,7 @@ for more details.;
 #X restore 890 64 pd ifCondition;
 #X obj 636 201 millerverb 1;
 #X floatatom 862 36 5 0 0 0 - - -;
-#N canvas 428 228 450 300 receiveHands 0;
+#N canvas 849 239 450 300 receiveHands 1;
 #X obj 82 55 routeOSC /hands/ID-centralXYZ;
 #X floatatom 171 116 5 0 0 0 - - -;
 #X floatatom 137 113 5 0 0 0 - - -;
@@ -4746,7 +4746,7 @@ for more details.;
 #X connect 5 3 6 0;
 #X connect 6 0 7 0;
 #X connect 8 0 0 0;
-#X restore 516 60 pd receiveHands;
+#X restore 326 151 pd receiveHands;
 #X obj 611 364 stereo-delay 1;
 #N canvas 603 191 450 300 loadAudio 0;
 #X obj 297 120 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
@@ -4845,8 +4845,6 @@ for more details.;
 #X msg 956 225 7;
 #X msg 1016 232 8;
 #X obj 931 291 sel >6 7;
-#X obj 449 312 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4317 1;
 #N canvas 963 287 490 397 volume 0;
 #X floatatom 206 58 5 0 0 0 - - -;
 #X floatatom 100 59 5 0 0 0 - - -;
@@ -4884,27 +4882,91 @@ for more details.;
 #X connect 12 0 9 0;
 #X connect 14 0 1 0;
 #X connect 15 0 0 0;
-#X restore 499 228 pd volume;
-#X obj 499 265 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+#X restore 500 281 pd volume;
+#X obj 500 318 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 518 533 *~;
-#X obj 516 436 sig~;
-#X obj 362 306 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7517 1;
-#X obj 251 285 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 3653 1;
-#X obj 350 219 * 5;
+#X obj 519 586 *~;
+#X obj 517 489 sig~;
+#N canvas 347 316 450 300 recieveSkelCentral 1;
+#X floatatom 171 116 5 0 0 0 - - -;
+#X floatatom 137 113 5 0 0 0 - - -;
+#X obj 129 140 outlet;
+#X obj 177 139 outlet;
+#X obj 116 85 unpack f f f f;
+#X floatatom 206 115 5 0 0 0 - - -;
+#X obj 221 138 outlet;
+#X obj 78 13 inlet;
+#X obj 82 55 routeOSC /skeletons/ID-centralXYZ;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 4 1 1 0;
+#X connect 4 2 0 0;
+#X connect 4 3 5 0;
+#X connect 5 0 6 0;
+#X connect 7 0 8 0;
+#X connect 8 0 4 0;
+#X restore 174 150 pd recieveSkelCentral;
+#X obj 175 365 -;
+#X obj 177 392 * 5;
+#X obj 172 214 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1024 1;
+#X obj 194 215 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6033 1;
+#X obj 179 457 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 178 606 X;
+#X obj 237 364 -;
+#X obj 239 391 * 5;
+#X obj 234 213 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1876 1;
+#X obj 256 214 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 6477 1;
+#X obj 241 456 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 240 605 Y;
+#X obj 305 366 -;
+#X obj 307 393 * 5;
+#X obj 302 215 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 1144 1;
+#X obj 324 216 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 2405 1;
+#X obj 309 458 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X msg 308 607 Z;
+#N canvas 558 484 450 300 recieveSkelCentral 0;
+#X floatatom 224 128 5 0 0 0 - - -;
+#X floatatom 182 139 5 0 0 0 - - -;
+#X obj 174 166 outlet;
+#X obj 222 165 outlet;
+#X floatatom 251 141 5 0 0 0 - - -;
+#X obj 78 13 inlet;
+#X obj 116 85 unpack f f f f f f f f;
+#X obj 266 164 outlet;
+#X obj 82 55 routeOSC /skeletons/bones/rightarm;
+#X connect 0 0 3 0;
+#X connect 1 0 2 0;
+#X connect 4 0 7 0;
+#X connect 5 0 8 0;
+#X connect 6 1 0 0;
+#X connect 6 2 1 0;
+#X connect 8 0 6 0;
+#X restore 434 150 pd recieveSkelCentral;
+#X obj 416 225 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 438 226 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
 #X connect 11 0 22 1;
 #X connect 11 0 21 1;
 #X connect 12 0 21 0;
 #X connect 12 0 22 0;
+#X connect 15 0 37 0;
 #X connect 15 2 19 0;
 #X connect 17 0 20 0;
 #X connect 17 1 20 0;
 #X connect 18 0 16 0;
-#X connect 19 0 33 0;
-#X connect 19 1 38 0;
-#X connect 19 2 40 0;
+#X connect 19 0 41 0;
+#X connect 19 1 47 0;
+#X connect 19 2 53 0;
 #X connect 20 0 10 4;
 #X connect 20 1 10 6;
 #X connect 21 0 17 0;
@@ -4918,7 +4980,23 @@ for more details.;
 #X connect 32 0 26 0;
 #X connect 32 1 27 0;
 #X connect 32 2 28 0;
-#X connect 34 0 35 0;
-#X connect 35 0 37 0;
-#X connect 37 0 36 1;
-#X connect 40 0 39 0;
+#X connect 33 0 34 0;
+#X connect 34 0 36 0;
+#X connect 36 0 35 1;
+#X connect 37 0 40 0;
+#X connect 37 1 46 0;
+#X connect 37 2 52 0;
+#X connect 38 0 39 0;
+#X connect 39 0 42 0;
+#X connect 40 0 38 0;
+#X connect 41 0 38 1;
+#X connect 44 0 45 0;
+#X connect 45 0 48 0;
+#X connect 46 0 44 0;
+#X connect 47 0 44 1;
+#X connect 50 0 51 0;
+#X connect 51 0 54 0;
+#X connect 52 0 50 0;
+#X connect 53 0 50 1;
+#X connect 56 0 57 0;
+#X connect 56 1 58 0;
