@@ -4821,7 +4821,7 @@ for more details.;
 #X floatatom 12 165 5 0 0 0 - - -;
 #X obj 583 566 *~;
 #X obj 485 548 sig~;
-#N canvas 347 316 450 300 recieveSkelCentral 0;
+#N canvas 347 316 450 300 recieveSkelCentral 1;
 #X floatatom 171 116 5 0 0 0 - - -;
 #X floatatom 137 113 5 0 0 0 - - -;
 #X obj 129 140 outlet;
@@ -4842,26 +4842,26 @@ for more details.;
 #X restore 174 150 pd recieveSkelCentral;
 #X obj 175 365 -;
 #X obj 177 392 * 5;
-#X obj 172 214 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 7918 1;
+#X obj 172 218 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 4800 1;
 #X obj 194 215 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 11687 1;
+-1 -1 5600 1;
 #X obj 179 457 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 12700 1;
+-1 -1 4000 1;
 #X msg 178 606 X;
 #X obj 237 364 -;
 #X obj 234 213 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5625 1;
+-1 -1 0 1;
 #X obj 256 214 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 4738 1;
+-1 -1 0 1;
 #X obj 241 458 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2661 1;
+-1 -1 0 1;
 #X msg 240 605 Y;
 #X obj 305 366 -;
 #X obj 302 215 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 726 1;
+-1 -1 0 1;
 #X obj 324 216 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 2156 1;
+-1 -1 0 1;
 #X obj 314 461 vsl 15 128 0 1 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
 #X msg 308 607 Z;

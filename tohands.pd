@@ -3653,7 +3653,7 @@ more elaborate pd-code for deeper control.;
 #X obj 204 151 r open-organelle-map!;
 #X msg 204 198 \; pd-organelle-map vis \$1;
 #X obj 203 272 r open-modules!;
-#N canvas 698 54 618 657 modules 1;
+#N canvas 698 54 618 657 modules 0;
 #X obj 203 81 cnv 15 180 15 empty empty MODULATION: 10 8 0 12 -158136
 -262144 0;
 #X obj 203 102 bng 15 250 50 0 \$0-create-basic-lfo! empty <--BASIC-LFO
@@ -4873,8 +4873,8 @@ for more details.;
 #X restore 308 148 pd recieveRightArm;
 #X obj 652 437 *~;
 #X obj 666 389 sig~;
-#X obj 482 271 *~;
-#X obj 498 225 sig~;
+#X obj 492 271 *~;
+#X obj 508 225 sig~;
 #X obj 840 589 /~ 2;
 #N canvas 558 484 450 300 recieveLeftArm 0;
 #X obj 78 13 inlet;
@@ -4895,7 +4895,7 @@ for more details.;
 #X msg 205 630 rightArm-techY;
 #X msg 308 607 leftArmX;
 #X msg 518 583 Volume;
-#X msg 525 253 Rvb;
+#X msg 535 253 Rvb;
 #X msg 685 357 Delay;
 #X connect 11 0 21 1;
 #X connect 12 0 21 0;
