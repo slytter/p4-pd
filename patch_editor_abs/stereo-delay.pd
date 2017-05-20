@@ -1,14 +1,14 @@
 #N canvas 0 22 1127 694 10;
 #X obj 106 128 hsl 128 15 0 127 0 1 \$0-stereo-delay-rate-left-s \$0-stereo-delay-rate-left-r
-RATE-LEFT 133 7 0 10 -262144 -1 -1 10100 1;
+RATE-LEFT 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 106 158 hsl 128 15 0 127 0 1 \$0-stereo-delay-feedback-s \$0-stereo-delay-feedback-r
-FEEDBACK 133 7 0 10 -262144 -1 -1 10900 1;
+FEEDBACK 133 7 0 10 -262144 -1 -1 3400 1;
 #X obj 438 16 inlet~;
 #X obj 438 506 *~ -1;
 #X obj 81 486 *~;
 #X obj 438 482 *~;
 #X obj 106 187 hsl 128 15 0 127 0 1 \$0-stereo-delay-dry/wet-s \$0-stereo-delay-dry/wet-r
-DRY/WET 133 7 0 10 -262144 -1 -1 4800 1;
+DRY/WET 133 7 0 10 -262144 -1 -1 12700 1;
 #X obj 96 276 t f f;
 #X msg 96 298 127 \$1;
 #X obj 96 320 -;
@@ -150,7 +150,7 @@ DRY/WET 133 7 0 10 -262144 -1 -1 4800 1;
 #X connect 27 0 15 0;
 #X restore 438 179 pd delay1;
 #X obj 106 143 hsl 128 15 0 127 0 1 \$0-stereo-delay-rate-right-s \$0-stereo-delay-rate-right-r
-RATE-RIGHT 133 7 0 10 -262144 -1 -1 8800 1;
+RATE-RIGHT 133 7 0 10 -262144 -1 -1 0 1;
 #X obj 562 504 *~ -1;
 #X obj 562 482 *~;
 #X obj 563 532 min~ 1;
@@ -169,7 +169,7 @@ RATE-RIGHT 133 7 0 10 -262144 -1 -1 8800 1;
 #X obj 562 430 lop~;
 #X obj 562 452 lop~;
 #X obj 106 172 hsl 128 15 0 127 0 1 \$0-stereo-delay-lowpass-s \$0-stereo-delay-lowpass-r
-LOWPASS 133 7 0 10 -262144 -1 -1 12700 1;
+LOWPASS 133 7 0 10 -262144 -1 -1 6600 1;
 #X obj 803 288 / 127;
 #X obj 803 337 * 4950;
 #X obj 803 359 + 50;
@@ -391,7 +391,7 @@ LOWPASS 133 7 0 10 -262144 -1 -1 12700 1;
 #X obj 157 193 r NUDGE-RANGE;
 #X obj 247 308 inlet;
 #X obj 232 397 outlet;
-#X floatatom 316 396 5 0 0 0 - - -, f 5;
+#X floatatom 316 396 5 0 0 0 - - -;
 #X connect 0 0 4 0;
 #X connect 1 0 2 0;
 #X connect 2 0 14 0;
@@ -517,7 +517,7 @@ LOWPASS 133 7 0 10 -262144 -1 -1 12700 1;
 #X connect 12 0 0 1;
 #X connect 13 0 1 1;
 #X restore 21 149 pd param-nudge;
-#N canvas 0 22 484 497 param-nudge 0;
+#N canvas 0 23 484 497 param-nudge 0;
 #X obj 124 234 random;
 #X obj 232 335 f;
 #X obj 232 368 +;
